@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Split from "react-split";
-import TableTop from "./components/TableTop";
-import Coordinates from "./components/Coordinates";
-import TableBottom from "./components/TableBottom";
-import TextArea from "./components/TextArea";
+import TableTop from "./components/tableTop/TableTop";
+import Coordinates from "./components/coordinates/Coordinates";
+import TableBottom from "./components/tableBottom/TableBottom";
+import TextArea from "./components/textArea/TextArea";
 
 export default function MyApp(Component, pageProps) {
   const [topWidth, setTopWidth] = useState(0);
