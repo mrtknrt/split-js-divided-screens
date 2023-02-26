@@ -14,7 +14,7 @@ export default function MyApp(Component, pageProps) {
   return (
     <Split direction="vertical" style={{ height: "calc(100vh)" }}>
       <Split
-        className="d-flex"
+        style={{ display: "flex" }}
         direction="horizontal"
         onDragEnd={(sizes) => {
           setTopWidth(sizes[0]);
@@ -25,7 +25,7 @@ export default function MyApp(Component, pageProps) {
         <Coordinates width={topWidth} height={topHeight} />
       </Split>
       <Split
-        className="d-flex"
+        style={{ display: "flex" }}
         direction="horizontal"
         onDragEnd={(sizes) => {
           setBottomWidth(sizes[0]);
