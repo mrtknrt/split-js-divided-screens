@@ -22,7 +22,12 @@ export default function MyApp(Component, pageProps) {
         }}
       >
         <TableTop />
-        <Coordinates width={topWidth} height={topHeight} />
+        <Coordinates
+          width={topWidth}
+          height={topHeight}
+          bottomWidth={bottomWidth}
+          bottomHeight={bottomHeight}
+        />
       </Split>
       <Split
         style={{ display: "flex" }}

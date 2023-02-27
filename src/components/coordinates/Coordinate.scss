@@ -1,33 +1,14 @@
 .container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 15px;
-  padding-left: 15px;
-  width: 100%;
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
-}
-
-.justify-content-end {
-  justify-content: flex-end;
-}
-
-.col-6 {
-  flex: 0 0 50%;
-  max-width: 50%;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-.backgroundColor {
+  padding: 20px 10px;
+  width: 40%;
   background-color: #d8dcb4;
+  float: right;
 }
 
-.fw-bold {
+.bold {
   font-weight: bold;
+}
+
+.mt {
+  margin-top: 15px;
 }

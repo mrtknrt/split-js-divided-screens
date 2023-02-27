@@ -1,14 +1,35 @@
 import React from "react";
+import "./Coordinate.scss";
 
-const Coordinates = ({ width, height }) => {
+const Coordinates = ({ width, height, bottomWidth, bottomHeight }) => {
   return (
     <div style={{ width: "100%" }}>
       <div className="container">
-        <div className="row">
-          <div className="backgroundColorCordinates">
-            <div className="fw-bold">Ayarlar</div>
-            <div className="fw-bold"> Top Width: {width} </div> <br />
-            <div className="fw-bold"> Top Height: {height}</div>
+        <div>
+          <div className="bold">Settings</div>
+        </div>
+        <div>
+          <div className="bold mt">Horizontal Panel's Coordinates</div>
+          <div>
+            <div>
+              {width} x {height}
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className="bold mt">Top Vertical Panel's Coordinates</div>
+          <div>
+            <div>
+              {width} x {height}
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className="bold mt">Bottom Vertical Panel's Coordinates</div>
+          <div>
+            <div>
+              {bottomWidth} x {bottomHeight}
+            </div>
           </div>
         </div>
       </div>
