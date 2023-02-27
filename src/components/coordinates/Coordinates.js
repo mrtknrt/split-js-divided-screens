@@ -1,7 +1,7 @@
 import React from "react";
 import "./Coordinate.scss";
 
-const Coordinates = ({ width, height, bottomWidth, bottomHeight }) => {
+const Coordinates = ({ topRight, topLeft, bottomRight, bottomLeft }) => {
   return (
     <div style={{ width: "100%" }}>
       <div className="container">
@@ -12,7 +12,7 @@ const Coordinates = ({ width, height, bottomWidth, bottomHeight }) => {
           <div className="bold mt">Horizontal Panel's Coordinates</div>
           <div>
             <div>
-              {width} x {height}
+              {topRight} X {topLeft}
             </div>
           </div>
         </div>
@@ -20,7 +20,7 @@ const Coordinates = ({ width, height, bottomWidth, bottomHeight }) => {
           <div className="bold mt">Top Vertical Panel's Coordinates</div>
           <div>
             <div>
-              {width} x {height}
+              {topRight} X {topLeft}
             </div>
           </div>
         </div>
@@ -28,7 +28,7 @@ const Coordinates = ({ width, height, bottomWidth, bottomHeight }) => {
           <div className="bold mt">Bottom Vertical Panel's Coordinates</div>
           <div>
             <div>
-              {bottomWidth} x {bottomHeight}
+              {bottomLeft} X {bottomRight}
             </div>
           </div>
         </div>

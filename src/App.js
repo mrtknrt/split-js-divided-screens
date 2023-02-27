@@ -6,10 +6,10 @@ import TableBottom from "./components/tableBottom/TableBottom";
 import TextArea from "./components/textArea/TextArea";
 
 export default function MyApp(Component, pageProps) {
-  const [topWidth, setTopWidth] = useState(0);
-  const [topHeight, setTopHeight] = useState(0);
-  const [bottomWidth, setBottomWidth] = useState(0);
-  const [bottomHeight, setBottomHeight] = useState(0);
+  const [topRight, setTopRight] = useState(0);
+  const [topLeft, setTopLeft] = useState(0);
+  const [bottomLeft, setBottomLeft] = useState(0);
+  const [bottomRight, setBottomRight] = useState(0);
 
   return (
     <Split direction="vertical" style={{ height: "calc(100vh)" }}>
@@ -17,24 +17,24 @@ export default function MyApp(Component, pageProps) {
         style={{ display: "flex" }}
         direction="horizontal"
         onDragEnd={(sizes) => {
-          setTopWidth(sizes[0]);
-          setTopHeight(sizes[1]);
+          setTopLeft(sizes[0]);
+          setTopRight(sizes[1]);
         }}
       >
         <TableTop />
         <Coordinates
-          width={topWidth}
-          height={topHeight}
-          bottomWidth={bottomWidth}
-          bottomHeight={bottomHeight}
+          topLeft={topLeft}
+          topRight={topRight}
+          bottomLeft={bottomLeft}
+          bottomRight={bottomRight}
         />
       </Split>
       <Split
         style={{ display: "flex" }}
         direction="horizontal"
         onDragEnd={(sizes) => {
-          setBottomWidth(sizes[0]);
-          setBottomHeight(sizes[1]);
+          setBottomLeft(sizes[0]);
+          setBottomRight(sizes[1]);
         }}
       >
         <TableBottom />
