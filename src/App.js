@@ -17,8 +17,8 @@ export default function MyApp(Component, pageProps) {
         style={{ display: "flex" }}
         direction="horizontal"
         onDragEnd={(sizes) => {
-          setTopLeft(sizes[0]);
-          setTopRight(sizes[1]);
+          setTopRight(sizes[0]);
+          setTopLeft(sizes[1]);
         }}
       >
         <TableTop />
