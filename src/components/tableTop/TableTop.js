@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./TableTop.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCog } from "@fortawesome/free-solid-svg-icons";
 
-function TopTable() {
+function TableTop() {
   const [posts, setPosts] = useState([]);
   const [selectedId, setSelectedId] = useState("all");
   const [showColumns, setShowColumns] = useState({
@@ -9,6 +11,7 @@ function TopTable() {
     title: true,
     body: true,
   });
+  const [showFilters, setShowFilters] = useState(false);
 
   useEffect(() => {
     let apiUrl = `https://jsonplaceholder.typicode.com/posts?_limit=5`;
@@ -32,6 +35,10 @@ function TopTable() {
       ...prevColumns,
       [col]: !prevColumns[col],
     }));
+  };
+
+  const handleSettingsClick = () => {
+    setShowFilters((prevShowFilters) => !prevShowFilters);
   };
 
   const tableHeaders = Object.keys(showColumns)
@@ -60,6 +67,11 @@ function TopTable() {
             <option value="5">5</option>
           </select>
         </div>
+        <div className="settings-icon" onClick={handleSettingsClick}>
+          <FontAwesomeIcon icon={faCog} />
+        </div>
+      </div>
+      {showFilters && (
         <div className="checkboxes">
           {Object.keys(showColumns).map((col) => (
             <label key={col}>
@@ -72,7 +84,7 @@ function TopTable() {
             </label>
           ))}
         </div>
-      </div>
+      )}
       <table>
         <thead>
           <tr>{tableHeaders}</tr>
@@ -83,4 +95,4 @@ function TopTable() {
   );
 }
 
-export default TopTable;
+export default TableTop;
