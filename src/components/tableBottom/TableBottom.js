@@ -27,18 +27,15 @@ export default function TableBottom() {
   };
 
   return (
-    <div>
-      {" "}
+    <div className="table-bottom">
       <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Body</th>
-            <th></th>
-          </tr>
-        </thead>
         <tbody>
+          <tr>
+            <td>ID</td>
+            <td>Title</td>
+            <td>Body</td>
+            <td></td>
+          </tr>
           {data.map((row) => (
             <tr key={row.id}>
               <td>{row.id}</td>
@@ -72,10 +69,10 @@ export default function TableBottom() {
                     onChange={handleNewRowChange}
                     placeholder="Body"
                   />
-                  <button onClick={handleSaveNewRow}>Save</button>
+                  <button onClick={handleSaveNewRow}>Kaydet</button>
                 </div>
               )}
-              {!addingRow && <button onClick={handleAddNewRow}>Add</button>}
+              {!addingRow && <button onClick={handleAddNewRow}>Ekle</button>}
             </td>
           </tr>
         </tbody>
