@@ -57,9 +57,8 @@ function TableTop() {
     <div>
       <div className="filters">
         <div className="dropdown">
-          <label htmlFor="id-filter">Filter by id:</label>
           <select id="id-filter" value={selectedId} onChange={handleIdChange}>
-            <option value="all">All</option>
+            <option value="all">Hepsi</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>

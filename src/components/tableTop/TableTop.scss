@@ -15,7 +15,7 @@
     }
 
     select {
-      padding: 0.5rem;
+      padding: 0.1rem;
     }
   }
 
@@ -33,6 +33,8 @@
   }
 
   .checkboxes {
+    width: 200px;
+    height: 200px;
     background-color: white;
     display: flex;
     flex-wrap: wrap;
