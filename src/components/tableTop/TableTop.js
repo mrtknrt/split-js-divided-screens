@@ -38,7 +38,7 @@ function TableTop() {
   };
 
   const handleSettingsClick = () => {
-    setShowFilters((prevShowFilters) => !prevShowFilters);
+    setShowFilters(!showFilters);
   };
 
   const tableHeaders = Object.keys(showColumns)
@@ -69,22 +69,24 @@ function TableTop() {
         </div>
         <div className="settings-icon" onClick={handleSettingsClick}>
           <FontAwesomeIcon icon={faCog} />
+          {showFilters && (
+            <div className="checkboxes-wrapper">
+              <div className="checkboxes">
+                {Object.keys(showColumns).map((col) => (
+                  <label key={col}>
+                    <input
+                      type="checkbox"
+                      checked={showColumns[col]}
+                      onChange={() => handleColumnToggle(col)}
+                    />
+                    {col}
+                  </label>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
-      {showFilters && (
-        <div className="checkboxes">
-          {Object.keys(showColumns).map((col) => (
-            <label key={col}>
-              <input
-                type="checkbox"
-                checked={showColumns[col]}
-                onChange={() => handleColumnToggle(col)}
-              />
-              {col}
-            </label>
-          ))}
-        </div>
-      )}
       <table>
         <thead>
           <tr>{tableHeaders}</tr>

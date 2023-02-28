@@ -23,20 +23,25 @@
     margin-right: 1rem;
     cursor: pointer;
     position: relative;
+
+    &:hover .checkboxes-wrapper {
+      display: block;
+    }
   }
 
   .checkboxes-wrapper {
-    position: relative;
-  }
-
-  .checkboxes-container {
     position: absolute;
-    top: calc(100% + 10px);
+    display: none;
+    top: 100%;
     right: 0;
     background-color: white;
-    padding: 10px;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    z-index: 1;
+    min-width: 150px;
+  }
+
+  .checkboxes {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
