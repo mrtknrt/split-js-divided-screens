@@ -1,0 +1,16 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #e0e0dd;
+  padding: 0.25rem !important; /* reduce padding of table header cells */
+}
+
+td,
+th {
+  padding: 0.25rem !important; /* reduce padding of table cells */
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}

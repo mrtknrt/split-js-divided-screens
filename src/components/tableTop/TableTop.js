@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./TableTop.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCog } from "@fortawesome/free-solid-svg-icons";
+import { faCog, faPlus, faUpload } from "@fortawesome/free-solid-svg-icons";
 
 function TableTop() {
   const [posts, setPosts] = useState([]);
@@ -66,6 +66,9 @@ function TableTop() {
             <option value="5">5</option>
           </select>
         </div>
+        <div className="settings-icon">
+          <FontAwesomeIcon icon={faUpload} />
+        </div>
         <div className="settings-icon" onClick={handleSettingsClick}>
           <FontAwesomeIcon icon={faCog} />
           {showFilters && (
@@ -88,6 +91,9 @@ function TableTop() {
               </div>
             </div>
           )}
+        </div>
+        <div className="settings-icon">
+          <FontAwesomeIcon icon={faPlus} />
         </div>
       </div>
       <table>
