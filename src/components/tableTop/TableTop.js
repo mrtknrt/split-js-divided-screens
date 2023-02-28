@@ -73,12 +73,16 @@ function TableTop() {
               <div className="checkboxes">
                 {Object.keys(showColumns).map((col) => (
                   <label key={col}>
-                    <input
-                      type="checkbox"
-                      checked={showColumns[col]}
-                      onChange={() => handleColumnToggle(col)}
-                    />
-                    {col}
+                    <ul className="no-bullets">
+                      <li>
+                        <input
+                          type="checkbox"
+                          checked={showColumns[col]}
+                          onChange={() => handleColumnToggle(col)}
+                        />
+                        {col}
+                      </li>
+                    </ul>
                   </label>
                 ))}
               </div>
