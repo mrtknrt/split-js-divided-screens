@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-function PostsTable() {
+function TopTable() {
   const [posts, setPosts] = useState([]);
-  const [selectedYear, setSelectedYear] = useState("all");
+  const [selectedId, setSelectedId] = useState("all");
   const [showColumns, setShowColumns] = useState({
     id: true,
     title: true,
@@ -10,20 +10,20 @@ function PostsTable() {
   });
 
   useEffect(() => {
-    let apiUrl = "https://jsonplaceholder.typicode.com/posts?_limit=5";
+    let apiUrl = `https://jsonplaceholder.typicode.com/posts?_limit=5`;
 
-    if (selectedYear !== "all") {
-      apiUrl += `?title=${selectedYear}`;
+    if (selectedId !== "all") {
+      apiUrl += `&id=${selectedId}`;
     }
 
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => setPosts(data))
       .catch((error) => console.log(error));
-  }, [selectedYear, showColumns]);
+  }, [selectedId, showColumns]);
 
-  const handleYearChange = (e) => {
-    setSelectedYear(e.target.value);
+  const handleIdChange = (e) => {
+    setSelectedId(e.target.value);
   };
 
   const handleColumnToggle = (col) => {
@@ -49,15 +49,14 @@ function PostsTable() {
     <div>
       <div className="filters">
         <div className="dropdown">
-          <label htmlFor="year-filter">Filter by year:</label>
-          <select
-            id="year-filter"
-            value={selectedYear}
-            onChange={handleYearChange}
-          >
+          <label htmlFor="id-filter">Filter by id:</label>
+          <select id="id-filter" value={selectedId} onChange={handleIdChange}>
             <option value="all">All</option>
-            <option value="2018">2018</option>
-            <option value="2019">2019</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
           </select>
         </div>
         <div className="checkboxes">
@@ -83,4 +82,4 @@ function PostsTable() {
   );
 }
 
-export default PostsTable;
+export default TopTable;
