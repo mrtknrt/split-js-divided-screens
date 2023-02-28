@@ -9,7 +9,13 @@ export default function TableBottom() {
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts?_limit=3")
       .then((response) => response.json())
-      .then((data) => setData(data));
+      .then((data) => {
+        setData(data);
+        const tableHeader = document.querySelector(".table-bottom thead");
+        if (tableHeader) {
+          tableHeader.parentNode.removeChild(tableHeader);
+        }
+      });
   }, []);
 
   const handleNewRowChange = (event) => {
@@ -29,13 +35,15 @@ export default function TableBottom() {
   return (
     <div className="table-bottom">
       <table>
-        <tbody>
+        <thead>
           <tr>
-            <td>ID</td>
-            <td>Title</td>
-            <td>Body</td>
-            <td></td>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Body</th>
+            <th></th>
           </tr>
+        </thead>
+        <tbody>
           {data.map((row) => (
             <tr key={row.id}>
               <td>{row.id}</td>
