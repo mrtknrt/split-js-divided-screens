@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./TableTop.scss";
 
 function TopTable() {
   const [posts, setPosts] = useState([]);
